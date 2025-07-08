@@ -11,6 +11,7 @@ spec:
     stages:
       # Deploy the workloads of CANARY variant. In this case, the number of
       # workload replicas of CANARY variant is 10% of the replicas number of PRIMARY variant.
+      - name: SQLDEF_FUNCTION_SYNC
       - name: K8S_CANARY_ROLLOUT
         with:
           replicas: 10%
