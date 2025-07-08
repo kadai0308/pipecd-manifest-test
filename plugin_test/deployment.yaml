@@ -1,27 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simple
+  name: plugin-combination
   labels:
-    app: simple
+    app: plugin-combination
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: simple
+      app: plugin-combination
       pipecd.dev/variant: primary
   template:
     metadata:
       labels:
-        app: simple
+        app: plugin-combination
         pipecd.dev/variant: primary
       annotations:
         sidecar.istio.io/inject: "false"
     spec:
       containers:
       - name: helloworld
-        image: ghcr.io/pipe-cd/helloworld:v0.32.0
+        image: gcr.io/pipecd/helloworld:v0.9.0
         args:
           - server
         ports:
         - containerPort: 9085
+
