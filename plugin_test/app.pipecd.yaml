@@ -1,7 +1,7 @@
 apiVersion: pipecd.dev/v1beta1
 kind: Application
 spec:
-  name: plugin-combination
+  name: sqldef-plugin-test
   labels:
     env: local
     owner: kadai0308
